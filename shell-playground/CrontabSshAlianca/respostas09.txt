@@ -1,0 +1,52 @@
+1. Crie três diretórios, e em cada um deles três arquivos de texto, dentro do diretório /var.
+
+	root@vmMakina:/# chmod 777 /var
+
+	user6@vmMakina:/$ mkdir /var/BackupSsh
+	user6@vmMakina:/$ mkdir /var/BackupExtraido
+	user6@vmMakina:/$ mkdir /var/PastaImportante
+	user6@vmMakina:/var/PastaImportante$ touch Pasta-{1..3}/arq-{a..c}
+
+
+2. Agora você deve criar uma ou mais rotinas de backup. As rotinas devem funcionar a cada 2 mim. Deve-se compactar as três pastas em um único arquivo tarball.
+
+3. Após a compactação cada arquivo deverá ser copiado para dentro da pasta home de cada usuário existente no sistema.
+
+4. Por último, as rotinas devem enviar o arquivo compactado, via ssh, para um colega de sua escolha.
+
+
+	R: Criei um script que faz as etapas 2 3 4, logo em seguida programei o crontab (/etc/crontab) para executar-lo
+
+	OBS: Também vale ressaltar os passos para enviar arquivos scp sem solicitação de senha do destino
+		root@vmMakina:/# ssh-keygen
+		root@vmMakina:/# ssh-copy-id andre@192.168.1.100
+		// Coloquei a senha do "andre" para fecharmos um contrato de aliança, depois nao coloquei senha para futuras solicitações remotas, assim nao terei problemas na hora que executar em segundo plano
+
+
+	O script a seguir resolve os passos 2 3 4 respectivamente nas três linhas de sua composição
+	root@vmMakina:/# vim /root/backupInvite.sh
+		#!/bin/bash
+		tar -cvjf /var/Backup/backup.tar.bzip /var/PastaImportante/*
+		for k in $(ls /home); cp /var/Backup/backup.tar.bzip /home/$k/ ; done
+		scp /var/Backup/backup.tar.bzip lucas@192.168.1.100:/var/BackupSsh/backupFrom-`whoami`.tar.bzip
+	root@vmMakina:/# chmod +x /root/backupInvite.sh
+
+	Regra do Crontab:
+		root@vmMakina:/# vim /etc/crontab
+		0-59/2 * * * * root sh /root/backupInvite.sh
+
+
+5. Após receber os arquivos, deve-se descompactá-los dentro da pasta /var. Todo processo deve ser feito por usuários que não o usuário root. Para isso uma outra rotina na máquina que irá receber os arquivos deverá ser criada realizar o processo de extração dos arquivos. Perceba que será necessário realizar isso em sincronia.
+
+
+	user6@vmMakina:/$ vim ~/backupReceive.sh
+		#!/bin/bash
+		tar -xvjf /var/BackupSsh/backupFrom-root.tar.bzip -C /var/BackupExtraido/
+
+	user6@vmMakina:/$ crontab -e
+		0-59/3 * * * * /home/andre/backupReceive.sh
+
+6. As rotinas devem funcionar assim que o sistema for ligado ou reiniciado.
+
+	root@vmMakina:/# ln /etc/crontab /etc/rc6.d/hardlink_crontab
+

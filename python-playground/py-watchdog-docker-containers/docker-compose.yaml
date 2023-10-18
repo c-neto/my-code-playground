@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  webservice:
+    container_name: webservice
+    restart: always
+    build:
+      context: ./container-example
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000

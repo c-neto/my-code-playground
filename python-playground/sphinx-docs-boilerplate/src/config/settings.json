@@ -1,0 +1,21 @@
+{
+  "default": {
+  },
+  "development": {
+    "LOG": {
+      "level": "CRITICAL",
+      "persisted": true,
+      "datetime_rotation": "00:00",
+      "directory": "./.temp_dev/log"
+    }
+  },
+  "production": {
+    "LOG": {
+      "level": "SUCCESS",
+      "datetime_rotation": "00:00",
+      "directory": "/var/log/my-module/",
+      "retention_days": "30 days",
+      "persisted": "SUCCESS"
+    }
+  }
+}

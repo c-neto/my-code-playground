@@ -1,0 +1,5 @@
+flask_wtf
+flask
+email-validator
+gunicorn
+pycryptodome

@@ -1,0 +1,23 @@
+2. Transforme os arquivos em um tarball e envie, por scp, para um de seus colegas.
+Faça isso para as duas formas de compactação gzip e bzip.
+
+	liks@Makina:~$ scp pacote.tar.bz pacote.tar.gz carlinhos@192.168.1.104:~/
+
+3. Se você foi o colega que recebeu o arquivo. Tente extrair os arquivos do tarball e
+mude a extensão de .txt para .sh.
+
+	carlinhos@vmMakina:~$ tar -xvjf pacote.tar.bz 
+	carlinhos@vmMakina:~$ tar -xvzf pacote.tar.gz 
+	carlinhos@vmMakina:~$ for k in {1..4}; do mv arq0$k.txt arq0$k.sh ; done
+
+
+4. Execute cada um dos arquivos .sh.
+
+	carlinhos@vmMakina:~$ for k in {1..4}; do ./arq0$k.sh ; done
+
+
+5. A execução do arquivo4 irá criar outros arquivos. Junte esses arquivos em um tarball e devolva ao seu colega usando o scp.
+
+	carlinhos@vmMakina:~$ tar -cvzf pacote.tar.gz arquivo?.txt
+	carlinhos@vmMakina:~$ tar -cvjf pacote.tar.bz arquivo?.txt
+	liks@Makina:~$ scp pacote.tar.bz pacote.tar.gz liks@192.168.1.104:~/

@@ -1,0 +1,49 @@
+1. Para cada usuário no sistema, busque por todos os arquivos que pertencem ao seu respectivo grupo.
+
+	user@vmMakina:~$ find / -group $(whoami)
+
+
+2. Use o comando locate para localizar os aquivos .txt de cada usuário no sistema.
+
+	root@vmMakina:~# ls -la $(locate '.txt') | awk '{print $3" is owner: "$9}'
+
+	user@vmMakina:~$ ls -la $(locate '.txt') | grep $(whoami)
+
+
+
+3. Use o comando find para localizar os aquivos .txt de cada usuário no sistema.
+
+	root@vmMakina:~# find / -iname '*.txt' -exec ls -la {} \; | awk '{print $3" e o dono de :"$9}'
+
+
+4. Para cada usuário no sistema, busque por todas as pastas que pertencem a esse usuário. Faça isto usando os dois comandos locate e find.
+
+	LOCATE:
+		user@vmMakina:~$ ls -la $(locate '*/') | grep $(whoami) | awk '{print "Sou dono de: "$9}'
+
+
+	FIND:
+		user@vmMakina:~$ find / -user $(whoami) -type d -exec echo "Eu sou o dono deste diretorio: " {} \;
+
+
+5. Busque no sistema por todas as pastas que tenha permissão: 777, 645, 654, 555. Use o comando find.
+
+	root@vmMakina:~# find / -type d -perm 777 -o -perm 645 -o -perm 654 -o -perm 555
+
+
+6. Busque no sistema por todas os arquivos que tenha permissão: 777, 645, 654, 555. Use o comando find.
+
+	root@vmMakina:~# find / -type f -perm 777 -o -perm 645 -o -perm 654 -o -perm 555
+
+
+7. Busque no sistema por todas os arquivos e pastas que tenham permissão de
+execução. Use o comando find.
+
+	root@vmMakina:~# find / -executable
+
+
+8. Busque no sistema por todas os arquivos e pastas que não tenham permissão de
+execução. Use o comando find.
+
+	root@vmMakina:~# find / ! -executable
+

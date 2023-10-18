@@ -1,0 +1,1576 @@
+{
+	"info": {
+		"_postman_id": "4523cbfb-da1b-4def-adba-9fc7dd2ca691",
+		"name": "mau",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "usuario post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cpf\": \"423.456.689-96\",\n  \"dataNascimento\": \"02/03/2019\",\n  \"email\": \"teste@teste\",\n  \"login\": \"testUser\",\n  \"nome\": \"teste\",\n  \"permissao\": \"admin\",\n  \"rg\": \"12.345.678-9\",\n  \"senha\": \"secreta\",\n  \"sexo\": \"Masculino\",\n  \n  \"enderecos\": [{\n    \"bairro\": \"bairro t\",\n    \"cep\": \"12345-678\",\n    \"cidade\": \"teste\",\n    \"complemento\": \"string\",\n    \"numero\": 9,\n    \"rua\": \"string\",\n    \"uf\": \"sp\"\n  }],\n  \"telefones\": [{\n    \"numero\": \"42 3455-1882\",\n    \"tipo\": \"Residencial\"\n  }]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/assistente/social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"assistente",
+								"social"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cpf\": \"123.456.789-01\",\n  \"dataNascimento\": \"2019-03-02\",\n  \"email\": \"teste@teste\",\n  \"login\": \"testUserTESTE\",\n  \"nome\": \"teste\",\n  \"permissao\": \"admin\",\n  \"rg\": \"12.345.678-9\",\n  \"senha\": \"secreta\",\n  \"sexo\": \"Masculino\",\n  \n  \"endereco\": {\n  \t\"id\":\"7\",\n    \"bairro\": \"bairro t\",\n    \"cep\": \"12345-678\",\n    \"cidade\": \"teste\",\n    \"complemento\": \"string\",\n    \"numero\": 2,\n    \"rua\": \"string\",\n    \"uf\": \"sp\"\n  },\n  \"telefone\": {\n  \t\"id\":\"7\",\n    \"numero\": \"12 3456-7890\",\n    \"tipo\": \"Residencial\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cpf\": \"423.456.689-96\",\n  \"dataNascimento\": \"02/03/2019\",\n  \"email\": \"teste@TESTE\",\n  \"login\": \"testUser\",\n  \"nome\": \"teste\",\n  \"permissao\": \"admin\",\n  \"rg\": \"12.345.678-9\",\n  \"senha\": \"secreta\",\n  \"sexo\": \"Masculino\",\n  \n  \"enderecos\": [{\n  \t\"id\":3,\n    \"bairro\": \"bairro t\",\n    \"cep\": \"12345-678\",\n    \"cidade\": \"teste\",\n    \"complemento\": \"string\",\n    \"numero\": 9,\n    \"rua\": \"string\",\n    \"uf\": \"sp\"\n  }],\n  \"telefones\": [{\n  \t\"id\":3,\n    \"numero\": \"42 3455-1882\",\n    \"tipo\": \"Residencial\"\n  }]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Telefone Usuario",
+			"item": [
+				{
+					"name": "adicionar telefone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\n    \"tipo\": \"Movel\",\n    \"numero\": \"43 3455-1856\"\n}\n\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/telefones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"telefones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza telefone",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipo\": \"Residencial\",\n    \"numero\": \"42 3455-1855\"\n}\n\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/telefones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"telefones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recuperar telefone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/telefones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"telefones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar telefone",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/telefones/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"telefones",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0ff94578-51da-4395-814d-3b2a22bdfd3b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d6e850b-8006-430d-a259-699257eb036a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Telefone Responsavel",
+			"item": [
+				{
+					"name": "adicionar telefone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\n    \"tipo\": \"Movel\",\n    \"numero\": \"43 3455-1806\"\n}]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1/telefones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1",
+								"telefones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza telefone",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipo\": \"Residencial\",\n    \"numero\": \"42 3455-1855\"\n}\n\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1/telefones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1",
+								"telefones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recuperar telefone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1/telefones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1",
+								"telefones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar telefone",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1/telefones/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1",
+								"telefones",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0ff94578-51da-4395-814d-3b2a22bdfd3b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d6e850b-8006-430d-a259-699257eb036a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Endereco Usuario",
+			"item": [
+				{
+					"name": "encontrar enderecos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover endereco",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/enderecos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"enderecos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar endereco",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rua\": \"string\",\n    \"numero\": 15,\n    \"complemento\": \"string\",\n    \"bairro\": \"bairro t\",\n    \"cidade\": \"teste\",\n    \"cep\": \"12345-678\",\n    \"uf\": \"sp\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/enderecos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"enderecos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar endereco",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\n    \"rua\": \"string\",\n    \"numero\": 15,\n    \"complemento\": \"string\",\n    \"bairro\": \"bairro t\",\n    \"cidade\": \"teste\",\n    \"cep\": \"12342-678\",\n    \"uf\": \"sp\"\n}]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereco Responsavel",
+			"item": [
+				{
+					"name": "encontrar enderecos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover endereco",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1/enderecos/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1",
+								"enderecos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar endereco",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rua\": \"string\",\n    \"numero\": 15,\n    \"complemento\": \"string\",\n    \"bairro\": \"bairro t\",\n    \"cidade\": \"teste\",\n    \"cep\": \"12345-678\",\n    \"uf\": \"sp\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1/enderecos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1",
+								"enderecos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar endereco",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\n    \"rua\": \"string\",\n    \"numero\": 15,\n    \"complemento\": \"string\",\n    \"bairro\": \"bairro t\",\n    \"cidade\": \"teste\",\n    \"cep\": \"12342-678\",\n    \"uf\": \"sp\"\n}]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Aluno",
+			"item": [
+				{
+					"name": "adicionar aluno",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MjY1MDA1fQ.mRynKpMZANsJLgM1HGEyW2pYLAZXcTaMBqE6GaH7cTkz1VaIzXyGm2G6qdHhxo9c4S5XFbDp4B_zQVCNbpA4WQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cor\": \"negro\",\n  \"nome\": \"aluno\",\n  \"numeroDeIrmao\": 0,\n  \"dataNascimento\": \"05/05/2019\",\n  \"sexo\": \"Masculino\",\n  \"doencas\": [\n    {\n    \t\"nome\":\"doenca cronica\",\n\t\t\"descricao\":\"doenca super fodac\"\n    }\n  ],\n  \"responsavel\": {\n    \"cpf\": \"string\",\n    \"dataNascimento\": \"05/05/2019\",\n    \"email\": \"string@stringresponsavel.com\",\n    \"grauDeParentesco\": \"ninguem sabe\",\n    \"nome\": \"ninguem sabe tambem\",\n    \"profissao\": \"so ele sabe\",\n    \"rg\": \"11.123.123-1\",\n    \"sexo\": \"Feminino\",\n    \"enderecos\": [\n      {\n        \"bairro\": \"sem bairro\",\n        \"cep\": \"12.123-123\",\n        \"cidade\": \"strings\",\n        \"complemento\": \"ninguem coloca\",\n        \"numero\": 1,\n        \"rua\": \"esquerda string direita\",\n        \"uf\": \"sp\"\n      }\n    ],\n    \"telefones\": [\n      {\n        \"numero\": \"12 3456-4567\",\n        \"tipo\": \"Residencial\"\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/alunos?turma=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos"
+							],
+							"query": [
+								{
+									"key": "turma",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar aluno",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzUyOTg0fQ.gMwE4IFPOSf_fOXUo0gqYbPisuaT6_bwrl6PiJX7eoet5ll_68YpaodcAPCrnYNYHGl0b1OyZ2IcjIGP26nQkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/alunos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar aluno",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzUwMTc0fQ.VMrOgPX8BokqcN7U_DvFf_zkft-5Krum2OpPJNJngWbAsMgacJaC3cxri34n2hy3K04_xEVLIIP-fRNNIehyFg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cor\": \"negrozo\",\n  \"nome\": \"aluno\",\n  \"numeroDeIrmao\": 0,\n  \"dataNascimento\": \"04/07/2019\",\n  \"sexo\": \"Masculino\",\n  \"doencas\": [\n    {\n    \t\"nome\":\"doenca cronica\",\n\t\t\"descricao\":\"doenca super fodac\"\n    }\n  ],\n  \"responsavel\": {\n    \"cpf\": \"string\",\n    \"dataNascimento\": \"05/05/2019\",\n    \"email\": \"string@stringresponsavel.com\",\n    \"grauDeParentesco\": \"ninguem sabe\",\n    \"nome\": \"ninguem sabe tambem\",\n    \"profissao\": \"so ele sabe\",\n    \"rg\": \"11.123.123-1\",\n    \"sexo\": \"Feminino\",\n    \"enderecos\": [\n      {\n        \"bairro\": \"sem bairro\",\n        \"cep\": \"12.123-123\",\n        \"cidade\": \"strings\",\n        \"complemento\": \"ninguem coloca\",\n        \"numero\": 1,\n        \"rua\": \"esquerda string direita\",\n        \"uf\": \"sp\"\n      }\n    ],\n    \"telefones\": [\n      {\n        \"numero\": \"12 3456-4567\",\n        \"tipo\": \"Residencial\"\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/alunos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar aluno",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzUwMTc0fQ.VMrOgPX8BokqcN7U_DvFf_zkft-5Krum2OpPJNJngWbAsMgacJaC3cxri34n2hy3K04_xEVLIIP-fRNNIehyFg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cor\": \"negrozo\",\n  \"nome\": \"aluno\",\n  \"numeroDeIrmao\": 0,\n  \"dataNascimento\": \"04/07/2019\",\n  \"sexo\": \"Masculino\",\n  \"doencas\": [\n    {\n    \t\"nome\":\"doenca cronica\",\n\t\t\"descricao\":\"doenca super fodac\"\n    }\n  ],\n  \"responsavel\": {\n    \"cpf\": \"string\",\n    \"dataNascimento\": \"05/05/2019\",\n    \"email\": \"string@stringresponsavel.com\",\n    \"grauDeParentesco\": \"ninguem sabe\",\n    \"nome\": \"ninguem sabe tambem\",\n    \"profissao\": \"so ele sabe\",\n    \"rg\": \"11.123.123-1\",\n    \"sexo\": \"Feminino\",\n    \"enderecos\": [\n      {\n        \"bairro\": \"sem bairro\",\n        \"cep\": \"12.123-123\",\n        \"cidade\": \"strings\",\n        \"complemento\": \"ninguem coloca\",\n        \"numero\": 1,\n        \"rua\": \"esquerda string direita\",\n        \"uf\": \"sp\"\n      }\n    ],\n    \"telefones\": [\n      {\n        \"numero\": \"12 3456-4567\",\n        \"tipo\": \"Residencial\"\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/alunos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar todos os alunos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MyxcImxvZ2luXCI6XCJ0ZXN0VXNlclwiLFwic2VuaGFcIjpcIiQyYSQxMCRPN3FtdC5yYnhTWi5PNXNWaWQwUlNleVVjUGtLQmtsTkpMbS5ZaEJkSDRyWG03V1IxUFZJcVwiLFwicGVybWlzc29lc1wiOltdLFwiZW1haWxcIjpcInRlc3RlQHRlc3RlXCIsXCJyZ1wiOlwiMTIuMzQ1LjY3OC05XCIsXCJjcGZcIjpcIjQyMy40NTYuNjg5LTk2XCIsXCJub21lXCI6XCJ0ZXN0ZVwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDIvMDMvMjAxOVwiLFwidGVsZWZvbmVzXCI6W3tcImlkXCI6NSxcInRpcG9cIjpcIlJlc2lkZW5jaWFsXCIsXCJudW1lcm9cIjpcIjQyIDM0NTUtMTg4MlwifV0sXCJlbmRlcmVjb3NcIjpbe1wiaWRcIjozLFwicnVhXCI6XCJzdHJpbmdcIixcIm51bWVyb1wiOjksXCJjb21wbGVtZW50b1wiOlwic3RyaW5nXCIsXCJiYWlycm9cIjpcImJhaXJybyB0XCIsXCJjaWRhZGVcIjpcInRlc3RlXCIsXCJjZXBcIjpcIjEyMzQ1LTY3OFwiLFwidWZcIjpcInNwXCJ9XX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InRlc3RlIiwiZXhwIjoxNTU3MjYwMDA1fQ.cIUuvfMbOZW_2rOPWfw20wKYuB9mJPOenaw6FvXJvOuEzGb4lmuhIFx0itaJa2BZpL6-IKThTPYOVmBmZhfGJA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/alunos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Turma",
+			"item": [
+				{
+					"name": "adicionar turma",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"turma do mau\",\n  \"periodo\": \"Matutino\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/turmas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turmas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar turma",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Turma do mau\",\n  \"periodo\": \"Matutino\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/turmas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turmas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar turmas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Turma do mau\",\n  \"periodo\": \"Matutino\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/turmas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turmas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar turma",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Turma do mau\",\n  \"periodo\": \"Matutino\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/turmas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turmas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar turma",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"turma do bom\",\n  \"periodo\": \"Matutino\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/turmas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turmas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permissao",
+			"item": [
+				{
+					"name": "visualizar permissoes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCIsXCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn1dLFwiZW1haWxcIjpcImFkbWluQGNlY29pLmNvbVwiLFwicmdcIjpcIjEyMzQ1Njc4OVwiLFwiY3BmXCI6XCIxMjM0NTY3ODlcIixcIm5vbWVcIjpcInN1cGVyIGFkbWluXCIsXCJzZXhvXCI6XCJNYXNjdWxpbm9cIixcImRhdGFOYXNjaW1lbnRvXCI6XCIwNS8wNS8yMDE5XCIsXCJ0ZWxlZm9uZXNcIjpbXSxcImVuZGVyZWNvc1wiOltdfSIsImlzcyI6ImJyLm9yZy5jZWxpb2xlbW9zIiwic3ViIjoic3VwZXIgYWRtaW4iLCJleHAiOjE1NTcyNjE3NTJ9.qEiBgNj0tBP2ykWISsdTQsHfNRsau63Bo6W4zixTUdtO39j-9kJU2nkbRfxjF37xbiW9y3zhKGKD4nJUhjoqRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar permissao",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCIsXCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn1dLFwiZW1haWxcIjpcImFkbWluQGNlY29pLmNvbVwiLFwicmdcIjpcIjEyMzQ1Njc4OVwiLFwiY3BmXCI6XCIxMjM0NTY3ODlcIixcIm5vbWVcIjpcInN1cGVyIGFkbWluXCIsXCJzZXhvXCI6XCJNYXNjdWxpbm9cIixcImRhdGFOYXNjaW1lbnRvXCI6XCIwNS8wNS8yMDE5XCIsXCJ0ZWxlZm9uZXNcIjpbXSxcImVuZGVyZWNvc1wiOltdfSIsImlzcyI6ImJyLm9yZy5jZWxpb2xlbW9zIiwic3ViIjoic3VwZXIgYWRtaW4iLCJleHAiOjE1NTcyNjE3NTJ9.qEiBgNj0tBP2ykWISsdTQsHfNRsau63Bo6W4zixTUdtO39j-9kJU2nkbRfxjF37xbiW9y3zhKGKD4nJUhjoqRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar permissao",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCIsXCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn1dLFwiZW1haWxcIjpcImFkbWluQGNlY29pLmNvbVwiLFwicmdcIjpcIjEyMzQ1Njc4OVwiLFwiY3BmXCI6XCIxMjM0NTY3ODlcIixcIm5vbWVcIjpcInN1cGVyIGFkbWluXCIsXCJzZXhvXCI6XCJNYXNjdWxpbm9cIixcImRhdGFOYXNjaW1lbnRvXCI6XCIwNS8wNS8yMDE5XCIsXCJ0ZWxlZm9uZXNcIjpbXSxcImVuZGVyZWNvc1wiOltdfSIsImlzcyI6ImJyLm9yZy5jZWxpb2xlbW9zIiwic3ViIjoic3VwZXIgYWRtaW4iLCJleHAiOjE1NTcyNjE3NTJ9.qEiBgNj0tBP2ykWISsdTQsHfNRsau63Bo6W4zixTUdtO39j-9kJU2nkbRfxjF37xbiW9y3zhKGKD4nJUhjoqRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"VIEWER\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar permissao em usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCIsXCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn1dLFwiZW1haWxcIjpcImFkbWluQGNlY29pLmNvbVwiLFwicmdcIjpcIjEyMzQ1Njc4OVwiLFwiY3BmXCI6XCIxMjM0NTY3ODlcIixcIm5vbWVcIjpcInN1cGVyIGFkbWluXCIsXCJzZXhvXCI6XCJNYXNjdWxpbm9cIixcImRhdGFOYXNjaW1lbnRvXCI6XCIwNS8wNS8yMDE5XCIsXCJ0ZWxlZm9uZXNcIjpbXSxcImVuZGVyZWNvc1wiOltdfSIsImlzcyI6ImJyLm9yZy5jZWxpb2xlbW9zIiwic3ViIjoic3VwZXIgYWRtaW4iLCJleHAiOjE1NTcyNjE3NTJ9.qEiBgNj0tBP2ykWISsdTQsHfNRsau63Bo6W4zixTUdtO39j-9kJU2nkbRfxjF37xbiW9y3zhKGKD4nJUhjoqRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"nome\": \"ROLE_EDITOR\"\n\t}\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar permissao",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCIsXCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn1dLFwiZW1haWxcIjpcImFkbWluQGNlY29pLmNvbVwiLFwicmdcIjpcIjEyMzQ1Njc4OVwiLFwiY3BmXCI6XCIxMjM0NTY3ODlcIixcIm5vbWVcIjpcInN1cGVyIGFkbWluXCIsXCJzZXhvXCI6XCJNYXNjdWxpbm9cIixcImRhdGFOYXNjaW1lbnRvXCI6XCIwNS8wNS8yMDE5XCIsXCJ0ZWxlZm9uZXNcIjpbXSxcImVuZGVyZWNvc1wiOltdfSIsImlzcyI6ImJyLm9yZy5jZWxpb2xlbW9zIiwic3ViIjoic3VwZXIgYWRtaW4iLCJleHAiOjE1NTcyNjE3NTJ9.qEiBgNj0tBP2ykWISsdTQsHfNRsau63Bo6W4zixTUdtO39j-9kJU2nkbRfxjF37xbiW9y3zhKGKD4nJUhjoqRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"VIEWER\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar permissao",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCIsXCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn1dLFwiZW1haWxcIjpcImFkbWluQGNlY29pLmNvbVwiLFwicmdcIjpcIjEyMzQ1Njc4OVwiLFwiY3BmXCI6XCIxMjM0NTY3ODlcIixcIm5vbWVcIjpcInN1cGVyIGFkbWluXCIsXCJzZXhvXCI6XCJNYXNjdWxpbm9cIixcImRhdGFOYXNjaW1lbnRvXCI6XCIwNS8wNS8yMDE5XCIsXCJ0ZWxlZm9uZXNcIjpbXSxcImVuZGVyZWNvc1wiOltdfSIsImlzcyI6ImJyLm9yZy5jZWxpb2xlbW9zIiwic3ViIjoic3VwZXIgYWRtaW4iLCJleHAiOjE1NTcyNjE3NTJ9.qEiBgNj0tBP2ykWISsdTQsHfNRsau63Bo6W4zixTUdtO39j-9kJU2nkbRfxjF37xbiW9y3zhKGKD4nJUhjoqRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover permissao de usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCIsXCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn1dLFwiZW1haWxcIjpcImFkbWluQGNlY29pLmNvbVwiLFwicmdcIjpcIjEyMzQ1Njc4OVwiLFwiY3BmXCI6XCIxMjM0NTY3ODlcIixcIm5vbWVcIjpcInN1cGVyIGFkbWluXCIsXCJzZXhvXCI6XCJNYXNjdWxpbm9cIixcImRhdGFOYXNjaW1lbnRvXCI6XCIwNS8wNS8yMDE5XCIsXCJ0ZWxlZm9uZXNcIjpbXSxcImVuZGVyZWNvc1wiOltdfSIsImlzcyI6ImJyLm9yZy5jZWxpb2xlbW9zIiwic3ViIjoic3VwZXIgYWRtaW4iLCJleHAiOjE1NTcyNjE3NTJ9.qEiBgNj0tBP2ykWISsdTQsHfNRsau63Bo6W4zixTUdtO39j-9kJU2nkbRfxjF37xbiW9y3zhKGKD4nJUhjoqRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"nome\": \"ROLE_EDITOR\"\n\t}\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/1/permissoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1",
+								"permissoes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Responsavel",
+			"item": [
+				{
+					"name": "visualizar responsaveis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzQ1Nzg5fQ.Cs1k7UxjTCUIPVJaIFIsZWaCDzV_iMUHgw5KTW3m_h096Uyhb40Lmzco2o2MUTVNGTl-iSsR9L-dUu6KLliwVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar responsavel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzUyOTg0fQ.gMwE4IFPOSf_fOXUo0gqYbPisuaT6_bwrl6PiJX7eoet5ll_68YpaodcAPCrnYNYHGl0b1OyZ2IcjIGP26nQkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adicionar responsavel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzUyOTg0fQ.gMwE4IFPOSf_fOXUo0gqYbPisuaT6_bwrl6PiJX7eoet5ll_68YpaodcAPCrnYNYHGl0b1OyZ2IcjIGP26nQkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"string0\",\n    \"dataNascimento\": \"05/05/2019\",\n    \"email\": \"string@stringresponsavel.com\",\n    \"grauDeParentesco\": \"ninguem sabe\",\n    \"nome\": \"ninguem sabe tambem\",\n    \"profissao\": \"so ele sabe\",\n    \"rg\": \"01.123.120-0\",\n    \"sexo\": \"Feminino\",\n    \"enderecos\": [\n      {\n        \"bairro\": \"sem bairro\",\n        \"cep\": \"12.123-120\",\n        \"cidade\": \"strings\",\n        \"complemento\": \"ninguem coloca\",\n        \"numero\": 1,\n        \"rua\": \"esquerda string direita\",\n        \"uf\": \"sp\"\n      }\n    ],\n    \"telefones\": [\n      {\n        \"numero\": \"11 3456-4567\",\n        \"tipo\": \"Residencial\"\n      }\n\t]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar responsavel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzUyOTg0fQ.gMwE4IFPOSf_fOXUo0gqYbPisuaT6_bwrl6PiJX7eoet5ll_68YpaodcAPCrnYNYHGl0b1OyZ2IcjIGP26nQkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"string00\",\n    \"dataNascimento\": \"05/05/2019\",\n    \"email\": \"string@stringresponsavel.com\",\n    \"grauDeParentesco\": \"ninguem sabe\",\n    \"nome\": \"ninguem sabe tambem\",\n    \"profissao\": \"so ele sabe\",\n    \"rg\": \"01.123.120-0\",\n    \"sexo\": \"Feminino\",\n    \"telefones\": [\n        {\n            \"id\": 2,\n            \"tipo\": \"Residencial\",\n            \"numero\": \"11 3456-4567\"\n        }\n    ],\n    \"enderecos\": [\n        {\n            \"id\": 2,\n            \"rua\": \"esquerda string direita\",\n            \"numero\": 1,\n            \"complemento\": \"ninguem coloca\",\n            \"bairro\": \"sem bairro\",\n            \"cidade\": \"strings\",\n            \"cep\": \"12.123-120\",\n            \"uf\": \"sp\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar responsavel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IntcImlkXCI6MSxcImxvZ2luXCI6XCJhZG1pblwiLFwic2VuaGFcIjpcIiQyYSQxMCQybEdZcG9CVk4zejJPQWVJbEV4Mm0uOGZUem1rYmRkNnd0MmlmNnk5TEUvR1V5LkFoTW5jZVwiLFwicGVybWlzc29lc1wiOlt7XCJpZFwiOjEsXCJub21lXCI6XCJST0xFX0FETUlOXCJ9XSxcImVtYWlsXCI6XCJhZG1pbkBjZWNvaS5jb21cIixcInJnXCI6XCIxMjM0NTY3ODlcIixcImNwZlwiOlwiMTIzNDU2Nzg5XCIsXCJub21lXCI6XCJzdXBlciBhZG1pblwiLFwic2V4b1wiOlwiTWFzY3VsaW5vXCIsXCJkYXRhTmFzY2ltZW50b1wiOlwiMDUvMDUvMjAxOVwiLFwidGVsZWZvbmVzXCI6W10sXCJlbmRlcmVjb3NcIjpbXX0iLCJpc3MiOiJici5vcmcuY2VsaW9sZW1vcyIsInN1YiI6InN1cGVyIGFkbWluIiwiZXhwIjoxNTU3MzUyOTg0fQ.gMwE4IFPOSf_fOXUo0gqYbPisuaT6_bwrl6PiJX7eoet5ll_68YpaodcAPCrnYNYHGl0b1OyZ2IcjIGP26nQkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/responsaveis/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"responsaveis",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fd67dc93-813a-4fc5-9660-0ec2c9b54cf3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e84b2082-878d-4fe9-8fe7-124ba815f266",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"admin\",\n\t\"senha\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

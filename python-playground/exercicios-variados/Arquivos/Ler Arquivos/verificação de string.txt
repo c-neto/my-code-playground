@@ -1,0 +1,43 @@
+variável.starswith ('letra da variável') 
+
+teste para verificar arquivos que começam com letra da variável
+
+===============================================================
+
+variável.endswith ('letra da variável')
+
+teste para verificar arquivos que terminam com letra da variável
+
+==============================================================
+
+variável.lower ()
+
+deixa string minúscula
+
+================================================================
+
+variável.upper ()
+
+deixa string maiúscula
+
+================================================================
+
+teste / variável.lower() in 'sim ou não'
+
+a variável é minúscula e é sim ou não?
+
+==============================================================
+
+variável.find()
+
+procura palávras a partir de um número digitado e exibe o indice onde a palavra se localiza
+=============================================================
+
+substituir strings
+
+variável = variável.replace('valor','valor')
+
+==============================================================
+
+split = separar textos
+join = junta textos

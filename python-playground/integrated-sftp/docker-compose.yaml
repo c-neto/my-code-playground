@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+
+  client-python:
+    build:
+      dockerfile: python-client-sftp.dockerfile
+      context: ./
+    volumes:
+      - "./volumes/client:/data:rw"
+    environment:
+      - SFTP-HOST=sftp-server
+      - STFP-PORT=22
+      - SFTP-USERNAME=carlosneto
+      - SFTP-PASSWORD=augustoliks
+
+  sftp-server:
+    image: atmoz/sftp
+    container_name: sftp-server
+    volumes:
+      - "./volumes/server:/home/carlosneto/upload:rw"
+    ports:
+      - "2222:22"
+    command: carlosneto:augustoliks:1001
+    # network_mode: host

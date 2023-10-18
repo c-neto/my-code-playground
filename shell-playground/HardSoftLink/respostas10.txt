@@ -1,0 +1,43 @@
+1. Na pasta home do seu usuário, crie 3 arquivos de texto e para cada arquivo crie um softlink e um hardlink. Você define o nome de cada arquivo e link criado.
+
+	user01@vmMakina:~/Playground$ ln arquivo-3 hard_arquivo-3
+	user01@vmMakina:~/Playground$ ln arquivo-2 hard_arquivo-2
+	user01@vmMakina:~/Playground$ ln arquivo-1 hard_arquivo-1
+
+	user01@vmMakina:~/Playground$ ln -s arquivo-1 soft_arquivo-1
+	user01@vmMakina:~/Playground$ ln -s arquivo-2 soft_arquivo-2
+	user01@vmMakina:~/Playground$ ln -s arquivo-3 soft_arquivo-3
+
+
+2. Mova todo hardlink para fora da pasta home. Após isso troque altere a permissão da pasta home do seu usuário para ninguém mais tenha acesso a ela exceto o dono.
+
+	user01@vmMakina:~/Playground$ mv hard_arquivo-* /var/Playground
+	user01@vmMakina:~/ chmod 700
+
+
+3. Faça login com outro usuário e tente acessar os arquivos, que estão na pasta home, sem permissão de acesso, usando cada hardlink.
+
+	user9@vmMakina:/var/Playground$ echo "TESTE" >> hard_arquivo-1
+-bash: hard_arquivo-1: Permissão negada
+
+
+4. Libere acesso a pasta home que estava bloqueada e para cada arquivo, que possui um softlink, bloquei seu acesso exceto para o dono.
+
+	user01@vmMakina:~/ chmod . 777
+	user01@vmMakina:~/Playground$ chmod 700 soft_arquivo-*
+	user01@vmMakina:~/Playground$ chmod 700 soft_arquivo-*
+	user01@vmMakina:~/Playground$ chmod 700 soft_arquivo-*
+
+
+5. Tente acessar agora cada arquivo, com acesso bloqueado, através do seu softlink.
+
+	user02@vmMakina:/var/Playground$ echo "teste" >> soft_arquivo-1
+
+
+6. Faça uma busca por todos os arquivos, que tem hardlink, utilizando o inode.
+
+	user01@vmMakina:~/Playground$ find -inum 1313793
+(out:)	./arquivo-1
+(out:)	./hard_arquivo-1
+
+

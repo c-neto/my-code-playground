@@ -1,0 +1,66 @@
+1 -> 1. Acessar a raiz do sistema e listar os diretórios que lá existem. Salve em um arquivo a lista de pasta que irá aparecer
+
+	root@vmMakina:/# cd /; ls -la
+
+2 -> Liberar permissão de escrita para os diretórios /var e /srv.
+
+	UGO:
+		root@vmMakina:/# chmod a=rwx var/ srv/
+
+	OCTAL:
+	root@vmMakina:/# chmod 777 var/ srv/
+
+3 -> Criar 3 novos usuários e para cada um criar um diretório dentro de /var e /srv. Os diretórios devem pertencer ao seu respectivo usuário, grupo e não devem ter acesso livre para demais usuários do sistema.
+
+	root@vmMakina:/# for ((k=1 ; k<=3 ; k+=1));do adduser user0$k ;done
+	user01@vmMakina:/var$ mkdir Pasta_`whoami`;
+	user02@vmMakina:/var$ mkdir Pasta_`whoami`;
+	user03@vmMakina:/var$ mkdir Pasta_`whoami`;
+
+
+	UGO:
+		user01@vmMakina:/var$ chmod a=-rwx,ug=rwx Pasta_`whoami`
+		user02@vmMakina:/var$ chmod a=-rwx,ug=rwx Pasta_`whoami`
+		user03@vmMakina:/var$ chmod a=-rwx,ug=rwx Pasta_`whoami`
+
+	OCTAL:
+		user01@vmMakina:/var$ chmod 770 Pasta_`whoami`
+		user02@vmMakina:/var$ chmod 770 Pasta_`whoami`
+		user03@vmMakina:/var$ chmod 770 Pasta_`whoami`
+
+4. Bloquear acesso aos diretórios /var e /srv mantendo as permissões dos subdiretórios criados.
+
+	root@vmMakina:/# chmod 700 /var /srv
+
+5 -> Dentro de cada diretório criar um arquivo de texto (.txt) vazio. Este arquivo deverá
+ser criado por cada usuário, não use o root para isso.
+
+	user01@vmMakina:/$ > /var/Pasta_user01/arquivo.txt
+		-bash: /var/Pasta_user01/arquivo.txt: Permissão negada
+
+	user02@vmMakina:/$ > /var/Pasta_user02/arquivo.txt
+		-bash: /var/Pasta_user02/arquivo.txt: Permissão negada
+
+	user03@vmMakina:/$ > /var/Pasta_user03/arquivo.txt
+		-bash: /var/Pasta_user03/arquivo.txt: Permissão negada
+
+6 -> Crie um outro arquivo vazio, no diretório /home de cada usuário. Copie esse arquivo para os diretórios /var e /srv de cada usuário.
+
+	UGO:
+		root@vmMakina:/# chmod a=rwx var/ srv/
+
+	OCTAL:
+		root@vmMakina:/# chmod 777 var/ srv/
+
+	user01@vmMakina:~$ cd
+	user01@vmMakina:~$ > arquivoX.txt 
+	user01@vmMakina:~$ mv ./arquivoX.txt /var/Pasta_user01
+
+	user02@vmMakina:~$ cd
+	user02@vmMakina:~$ > arquivoX.txt 
+	user02@vmMakina:~$ mv ./arquivoX.txt /srv/Pasta_user02
+
+	user03@vmMakina:~$ cd
+	user03@vmMakina:~$ > arquivoX.txt 
+	user03@vmMakina:~$ mv ./arquivoX.txt /srv/Pasta_user03
+

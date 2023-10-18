@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  etcd:
+    image: bitnami/etcd:latest
+    container_name: etcd
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      # - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+    ports:
+      - 2379:2379
+      - 2380:2380
+
+  python-client:
+    container_name: python-client
+    build:
+      context: python-client
+    environment:
+      ETCD_CONTAINER_NAME: etcd
+
+  python-listener:
+    container_name: python-listener
+    build:
+      context: python-listener
+    environment:
+      ETCD_CONTAINER_NAME: etcd

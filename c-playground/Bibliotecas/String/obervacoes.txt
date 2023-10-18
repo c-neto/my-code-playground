@@ -1,0 +1,8 @@
+//Digita: Nome e sobrenome  -  16 char
+//         0123456        15 16 '\0'
+
+quando o usuario pressiona o enter, o vetor assumi o um caracter especial "\0" na ultima posicao do vetor
+
+
+nao utiliza scanf, pois ele aceita valores até o ENTER E O ESPAÇO
+então utilizaremos gets (nome_da_variavel)

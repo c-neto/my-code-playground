@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "extending-python-with-c"
+version = "0.1.0"
+description = "Write in C - Import in Python"
+authors = ["Carlos Neto <carlos.santos110@fatec.sp.gov.br>"]
+
+[tool.poetry]
+build = "build.py"
+
+[tool.poetry.dependencies]
+python = "^3.7.9"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

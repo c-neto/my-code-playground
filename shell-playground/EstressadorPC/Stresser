@@ -1,0 +1,85 @@
+function QtyCpuCore() {
+        cat /proc/cpuinfo | grep processor | wc -l
+}
+
+function CheckStress-ng () {
+        grep -iq debian /etc/issue
+        if [ $? == 0 ]; then
+                dpkg -l | grep -iq "stress-ng"
+        fi
+        grep -i cent /etc/issue
+        if [ $? == 0 ]; then
+                rpm -qa | grep -iq "stress-ng"
+        fi
+}
+
+function Menu () {
+        clear
+        echo "Facilitator for Stress you CPU, Memory RAM, HDD SSD Linux"
+        echo "> Dispositivos disponiveis"
+        echo -e "\t* CPU\t\t[1]"
+        echo -e "\t* Memoria RAM\t[2]"
+        echo -e "\t* HDD/SSD\t[3]"
+        echo -e "\t* Auto-test\t[4]"
+}
+
+function Stress-CPU () {
+        echo -e "-> OBS* Voce tem $(QtyCpuCore) core em seu processador\n\n"
+        echo -n ">>> Quantidade de core da CPU (em unidades): " ; read cpu;
+        echo -n ">>> Tempo do teste(em segundos): " ; read timeout;
+
+        stress-ng --cpu $cpu --timeout ${timeout}s --metrics-brief
+}
+
+function Stress-RAM () {
+        echo -ne ">>> Indique o quantidade de processos que sera executado: " ; read qty_proc;
+        echo -ne ">>> Indique o tamanho que sera alocado na memoria RAM, por cada processo\n-> OBS* Utilize o sufixo\n\t -> g (para indicar GigaBytes)\n\t -> m (para indicar MegaBytes)\n\t -> k (para indicar KiloByte)\n\t -> % (para indicar o tamanho em porcentagem, em relacao a ao tamanho total disponivel)\n\n>>> Indique um tamanho: " ; read archive_size;
+        echo -ne ">>> Tempo do teste(em segundos): " ; read timeout;
+
+        stress-ng −−malloc 10 −−malloc−bytes 10 --timeout 10s --metrics-brief
+        stress-ng −−malloc $qty_proc −−malloc−bytes $archive_size --timeout ${timeout}s --metrics-brief
+}
+
+function Stress-HD(){
+        echo -n ">>> Indique o quantidade de processos que será executado: " ; read qty_proc;
+        echo -ne ">>> Indique o tamanho do arquivo que será escrito no HD temporariamente, por cada processo\n-> OBS* Utilize o sufixo\n\t -> g (para indicar GigaBytes)\n\t -> m (para indicar MegaBytes)\n\t -> k (para indicar KiloByte)\n\n >>> Qual o tamanho do arquivo: " ; read archive_size;
+        echo -n ">>> Tempo do teste(em segundos): " ; read timeout;
+
+        stress-ng -d $qty_proc --hdd-bytes $archive_size --timeout ${timeout}s --metrics-brief
+}
+
+function Stress-ALL(){
+        echo -n ">>> Tempo do teste(em segundos): " ; read timeout;
+        stress-ng --cpu $(Check-QtdCpuCore) --malloc 1 −−malloc−bytes 100% -d 1 --hdd-bytes 100% --timeout ${timeout}s --metrics-brief
+}
+
+function CheckOptions () {
+        if [ $1 -eq 1 ]; then
+                Stress-CPU
+        elif [ $1 -eq 2 ]; then
+                Stress-RAM
+        elif [ $1 -eq 3 ]; then
+                Stress-HD
+        elif [ $1 -eq 4 ]; then
+                Stress-ALL
+        else
+                echo -e "\n[!] \"$1\" é uma opção NAO VALIDA"
+        fi
+}
+
+function Main(){
+        op_menu = "S"
+
+        while [[ $op_menu=="S" || $op_menu=="s" ]]; do
+                CheckStress-ng
+         
+                Menu
+         
+                echo -n ">>> Diga qual componente voce deseja testar: " ; read op
+                CheckOptions $op
+         
+                echo -ne "\n\n>>> Voce quer continuar? [S/n] "; read op_menu
+        done
+}
+
+Main

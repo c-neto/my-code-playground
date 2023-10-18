@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+  version="3.1"
+  metadata-complete="true">
+
+    <description>
+      Aplicação Agenda Eletrônica
+    </description>
+    <display-name>Aplicação Agenda Eletrônica</display-name>
+    
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>web.servlet.Login</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Autenticador</servlet-name>
+        <servlet-class>web.servlet.Autenticador</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Autenticador</servlet-name>
+        <url-pattern>/Autenticador.action</url-pattern>
+    </servlet-mapping>
+    
+</web-app>

@@ -1,0 +1,104 @@
+>>> Utilizar monousuário para evitar problemas
+# init 1
+
+>>> Instalar quota
+# apt-get install quota
+
+
+>>> modificar as partições que terão quota de arquivo
+# vim /etc/fstab
+
+     /dev/hda1    /boot ext2     defaults                   1  1
+     /dev/hda3    /     ext2     defaults,usrquota          1  2
+     /dev/hda4    /home  ext2     defaults,grpquota          1  3
+     /dev/hda5    /var  ext2     defaults,usrquota,grpquota 1  4
+											|		|
+											Para usuários isolados
+													|
+													para grupos
+
+>>> Desmontar "todas" as partições do sistema, para que assim, possa ser quotados
+# umount -a
+# mount -a
+
+
+>>> Se estiver tentando cotar o "/", terá que reiniciar o sistema
+# init 6
+
+
+>>> Criar arquivo de configuração aquota.user e aquota.group (se o /, estiver em quotado, terá que obrigatoriamente usar a opção -m)
+# quotacheck -avugm
+			  |||||
+			  todas as partições quotadas
+			   ||||
+			   verbosamente
+			    |||
+			    usuários quotados (usrquota)
+			     ||
+			     grupos quotados (grpquota)
+			      |
+			      "forçar" a remontagem como somente leitura do sistema de arquivos /
+
+
+>>> Verificar se os arquivos binários aquota.user e/ou aquota.group foram criados nos pontos de montagem das partições quotadas
+
+# ls /aquota*
+# ls /var/aquota*
+# ls /home/aquota*
+
+
+>>> Habilitar quota (Para alterações, utilizar o quotacheck -avugm)
+
+# quotaon -avug			(para todas as partições quotadas "-a", para usários "-u" e grupos "-g" quotados)
+# quotaon -vu /			(apenas "/", para usários quotados"-u")
+# quotaon -vg /var 		(apenas "/var", para grupos quotados "-g")
+
+
+>>> Desabilitar quota (Para alterações, utilizar o quotacheck -avugm)
+
+# quotaoff -avug			(para todas as partições quotadas "-a", para usários "-u" e grupos "-g" quotados)
+# quotaoff -vu /			(apenas "/", para usários quotados"-u")
+# quotaoff -vg /var 		(apenas "/var", para grupos quotados "-g")
+
+
+>>> editar/criar quota de disco
+
+# edquota -u carlos
+		   |
+		   Usuário
+
+# edquota -g arquivadores
+		   |
+		   Grupo
+
+
+Disk quotas for user carlos (uid 1001):
+  Filesystem                   blocks       soft       hard     inodes     soft     hard
+  /dev/sda8                         0      40000      50000          0        0        0
+  /dev/sda5                         0      40000      50000          0        0        0
+  /dev/sda6                         7      40000      50000          4        0        0
+	|								|		|			|			|		|			|
+	Partição a ser quotada			|		|			|			|		|			|
+									|		|			|			|		|			|
+									Quantidade de bloco já ocupados pelo user/grupo (bloco padrão linux == 1KB)
+											|			|			|		|			|
+											Quantidade para disparar Aviso de quota ultrapassada
+														|			|		|			|
+														Quantidade de bloco de memória LIMITE do user/group
+																	|		|			|
+																	Quantidade de arquivos que o user/group já possui na respectiva partição
+																			|			|
+																			Limite para aviso (mesma lógica)
+																						|
+																						Limite pra travar (mesma lógica)
+
+
+>>> Ver quotas
+
+# reqpquota -avug		(Ver todas as partições)
+# reqpquota -vug /dev/sda5		(Ver a partição em específico)
+						|
+						Partição quotada
+
+
+

@@ -1,0 +1,2 @@
+conteudo de uma variavelEstou escrevendo no arquivo.txt
+Novas linhas

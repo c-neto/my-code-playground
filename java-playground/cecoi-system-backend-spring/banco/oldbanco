@@ -1,0 +1,27 @@
+DROP DATABASE IF EXISTS EscolaCECOI;
+CREATE DATABASE EscolaCECOI CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE EscolaCECOI;
+
+CREATE TABLE USUARIO (
+    usr_pk INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    usr_login VARCHAR(255),
+    usr_senha VARCHAR(255),
+    usr_permissao_sistema ENUM('admin', 'viewer', 'editor'),
+    usr_email VARCHAR(100),
+    usr_rg VARCHAR(12) NOT NULL,
+    usr_cpf VARCHAR(15) NOT NULL,
+    usr_nome VARCHAR(50) NOT NULL,
+    usr_sexo ENUM('Masculino', 'Feminino'),     
+    usr_data_nascimento DATE NOT NULL
+);
+
+CREATE TABLE TELEFONE (
+    tel_pk INT NOT NULL PRIMARY KEY AUTO_INCREMENT,  
+    tel_natureza ENUM('Pessoal', 'Profissional'),
+    tel_tipo ENUM('Residencial', 'Movel'),
+    
+    tel_numero VARCHAR(15),
+    tel_usr_fk INT,
+    
+    FOREIGN KEY (tel_usr_fk) REFERENCES USUARIO (usr_pk)
+);

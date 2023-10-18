@@ -1,0 +1,6 @@
+flask
+pydantic
+python-ldap
+loguru
+gunicorn
+pycryptodome

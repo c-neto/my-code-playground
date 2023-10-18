@@ -1,0 +1,20 @@
+# https://github.com/pprzetacznik/IElixir
+# docker run -p 8888:8888 --hostname localhost -v notebook:/home/jovyan/work pprzetacznik/ielixir
+
+version: "3.7"
+
+services:
+  jupyter-elixir:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: jup-notebook
+    hostname: localhost
+    ports: 
+      - 8888:8888
+    volumes:
+      - type: bind
+        bind:
+          propagation: shared
+        source: ./jupyter-notebook
+        target: /home/jovyan/work
