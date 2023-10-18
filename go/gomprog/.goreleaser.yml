@@ -1,0 +1,38 @@
+# This is an example .goreleaser.yml file with some sane defaults.
+# Make sure to check the documentation at http://goreleaser.com
+before:
+  hooks:
+    # You may remove this if you don't use go modules.
+    - go mod tidy
+    # you may remove this if you don't need go generate
+    - go generate ./...
+
+builds:
+  - main: ./cmd/gomprog_redis/main.go
+    id: "gomprog-redis"
+    binary: gomprog-redis
+    goos:
+      - linux
+
+archives:
+  - id: gomprog-redis
+    format: zip
+    replacements:
+      amd64: x86_64
+      386: i686
+    files:
+      - README.md
+      # - docs/*
+ 
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ .Tag }}-SNAPSHOT-{{.ShortCommit}}"
+
+# changelog:
+#   sort: asc
+#   filters:
+#     exclude:
+#       - '^docs:'
+#       - '^test:'
