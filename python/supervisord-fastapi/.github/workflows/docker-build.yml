@@ -1,0 +1,15 @@
+name: Build Dockerfile
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl $WEBHOOK_BUILD_LATEST
+
+env:
+  WEBHOOK_BUILD_LATEST: ${{ secrets.WEBHOOK_BUILD_LATEST }}
