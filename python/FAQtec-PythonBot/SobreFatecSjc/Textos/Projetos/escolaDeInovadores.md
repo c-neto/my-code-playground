@@ -1,1 +1,0 @@
-É um programa que busca fornecer através de palestras e oficinas, com professores, empresários e líderes, com conhecimento necessário para transformar sua idéia de negócio em um projeto com potencial de sucesso!
