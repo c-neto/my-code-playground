@@ -1,0 +1,45 @@
+reports_base_path: "_reports"
+
+
+jira:
+  email:
+  auth_token:
+  domain:
+
+
+jql:
+  issues_planned: |
+    issuetype NOT IN (Sub-task) AND
+    project = INF AND
+    sprint = "Sprint {sprint}" AND
+    comment ~ "Issue Added After Sprint Started: Sprint {sprint} - IT Operations"
+  issues_unplanned: |
+    issuetype NOT IN (Sub-task) AND
+    project = INF AND
+    sprint = "Sprint {sprint}" AND
+    filter != "it-ops-unplanned"
+
+
+issue_custom_field:
+    area: customfield_12921
+    team: customfield_12920
+
+
+board_by_status_mapping:
+  todo:
+    - reopened
+    - scheduled
+    - new
+    - backlog
+    - assigned
+    - triggered
+  doing:
+    - in progress
+    - acknowledge
+    - canceled
+    - to deploy
+    - on hold
+    - deploy in progress
+  done:
+    - closed
+    - resolved

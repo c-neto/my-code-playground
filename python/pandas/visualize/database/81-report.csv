@@ -1,0 +1,152 @@
+sprint,assignee,area,board,team,epic_link_summary,issue_key,issue_type,original_estimate,priority,status,summary,time_spent,is_planned
+81,carlos.neto@trustly.com,Integration,done,dev ops,,INF-16445,story,3600,Low,closed,[sprint-report] save raw reports ,3600,True
+81,carlos.neto@trustly.com,Tools,done,dev ops,,INF-16427,story,10800,Medium,closed,[app] rename application pod container from nginx to nginx-internal ,7200,True
+81,carlos.neto@trustly.com,Integration,done,dev ops,,INF-16396,story,7200,Medium,closed,[opensearch] create scripts to enabled and disabled monitor in OpenSearch,7200,True
+81,alvaro.carvalho@trustly.com,Observability,done,sre,,INF-16386,story,3600,None,closed,[pagerduty/cloudwatch] Padronize GEO DB Alerts,,True
+81,alvaro.carvalho@trustly.com,Observability,done,sre,,INF-16378,story,3600,None,closed,[pagerduty] Supress DMS Notification Messages,3600,True
+81,carlos.neto@trustly.com,Tools,done,dev ops,,INF-16377,story,28800,Critical,closed,[CRB] Manual Intervention of the CRB files in the External SFTP Server,28800,True
+81,henrique.pettenuci@trustly.com,Platform,done,dev ops,,INF-16375,environment change,,Low,closed,Request access to DB table for the users ( dataops_readonly and datalake),,True
+81,tiago.guasti@trustly.com,Observability,doing,sre,,INF-16374,incident,,Trivial/Undefined,acknowledge,[AMER-PRO] 'JmxBuiltIn/Threads/Thread Count' > 110.0 for at least 5 minutes on 'merchant-gateway-server (api-v197-hgv9p)',,True
+81,lucas.santos@trustly.com,Tools,done,dev ops,,INF-16373,story,7200,High,closed,Disable Action Repo AlertManager,,True
+81,marcus.leite@trustly.com,Platform,doing,dev ops,,INF-16366,bug,14400,Medium,on hold,Increase Processors Graceful Shutdown Time,,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16360,bug,28800,Medium,closed,Hotfix for Android Server deployment,21600,True
+81,lucas.santos@trustly.com,Tools,doing,dev ops,,INF-16359,story,57600,High,to deploy,Update Bamboo v9.4.1,36000,True
+81,vinicius.pilan@trustly.com,Tools,done,dev ops,,INF-16354,story,86400,High,closed,[DevSupport] Vinicius Pilan - Sprint 81,86400,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16352,story,28800,High,closed,Enable maintenance policy for Android Server ASG,14400,True
+81,marcus.leite@trustly.com,Platform,done,dev ops,,INF-16350,bug,14400,Medium,closed,"Bamboo Build - Errors when deleting ""~/.docker/config.json"" file",,True
+81,carlos.neto@trustly.com,Tools,done,dev ops,,INF-16348,story,21600,Low,closed,[logserver] move older log files from logserver EBS to S3 ,21600,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16347,story,86400,Medium,closed,Optimize Android Server costs,72000,True
+81,gabriel.souza@trustly.com,App Security,done,sec ops,,INF-16346,story,1800,Medium,closed,"Add ""GITHUB_APP_PRIVATE_KEY_SECRET"" in ""Integration Tests - Specs"" project on Bamboo",,True
+81,carlos.neto@trustly.com,Tools,done,dev ops,,INF-16344,story,3600,Low,closed,[doc] update the documentation of the Get Logs TRX in the LogServer ,3600,True
+81,rafael.brunoro@trustly.com,Data Tools,done,data ops,,INF-16341,story,28800,None,closed,[Support] Deploy Risk Model - FanDuel AutoML NSF v2.0,28800,True
+81,gabriel.souza@trustly.com,App Security,done,sec ops,,INF-16340,story,3600,High,closed,Enable Github Actions for alertmanager-app-metrics-rules,0,True
+81,pedro.gonring@trustly.com,Integration,done,dev ops,,INF-16339,story,144000,Medium,closed,[DevSupport] Pedro Gonring - Sprint 81,,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16338,bug,7200,Medium,closed,Image Swap not working on EMEA-SBX/AMER-SBX,3600,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16332,story,28800,Blocker,closed,Upgrade Linkerd to 2.13.7,28800,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16330,story,28800,Medium,closed,Support multiple APKs installation,14400,True
+81,lucas.santos@trustly.com,Tools,done,dev ops,,INF-16327,story,7200,High,closed,Change Alert Bamboo Metrics,2700,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16326,bug,43200,Medium,closed,Intermittent failure to install Frida,28800,True
+81,filipe.monteiro@trustly.com,Data Batch,done,data ops,,INF-16323,story,,High,closed,"Add AML Rule 1, 2, 3 and 4 to CANADA",7200,True
+81,filipe.monteiro@trustly.com,Data Batch,done,data ops,,INF-16322,story,,Medium,closed,Enable defer in dbt ci dag,900,True
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16254,story,57600,High,closed,Restrict IAM policy Android Server deployment,28800,True
+81,filipe.monteiro@trustly.com,Data Batch,done,data ops,,INF-16239,story,14400,Medium,closed,Cluster Optimization Test for Performance Improvement,3600,True
+81,alvaro.carvalho@trustly.com,Tools,done,sre,,INF-16191,story,,Medium,closed,Update team name on PagerDuty ,,True
+81,marcus.leite@trustly.com,Platform,done,dev ops,,INF-14698,story,115200,Medium,closed,New Module Billing Configuration,,True
+81,carlos.neto@trustly.com,Tools,done,dev ops,,INF-9050,story,28800,Medium,closed,[logserver] LogServer dojo scripts v2,36000,True
+81,pedro.gonring@trustly.com,Integration,done,dev ops,,INF-16325,story,28800,High,closed,[NinjaCLI] Add retry options for rotate command,14400,False
+81,gabriel.souza@trustly.com,App Security,done,sec ops,,INF-16320,story,28800,Low,closed,[App Security] Pentest Follow-Up,14400,False
+81,luca.regne@trustly.com,App Security,done,sec ops,,INF-16319,story,28800,High,closed,[App Security][gitleaks] Create rule in gitleaks to detect secrets in ODFI Sandbox,,False
+81,gabriel.souza@trustly.com,App Security,done,sec ops,,INF-16318,story,14400,Medium,closed,[App Security] [Gitleaks] Evaluate and clean secrets found by Gitleaks for Payments on core repository,12600,False
+81,tchesley.alves@trustly.com,Corporate,done,dev ops,,INF-16317,story,,None,closed,[AMER-CORP] Roll out Sensitive information on EC2 instances (Domain Manager),,False
+81,luiz.berger@trustly.com,MLOps,done,ml ops,,INF-16316,story,,High,closed,[Support] Deploy Risk Model in Shadow Mode - FanDuel v2 Shadow Mode variant,5400,False
+81,pedro.gonring@trustly.com,Integration,done,dev ops,,INF-16313,story,14400,High,closed,[Neo4j] Change Node Type on AMER-PRO,14400,False
+81,vinicius.pilan@trustly.com,Platform,done,dev ops,,INF-16312,story,14400,Blocker,closed,[DevOps] Backstage - RDS instance SHS environment,14400,False
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16311,bug,28800,Medium,closed,Intermittent Linkerd Gateway timeout,,False
+81,fernando.silva@trustly.com,Cloud Security,done,sec ops,,INF-16309,story,28800,Medium,closed,[Cloud Security] Compile new findings to create new issues and direct,10800,False
+81,fernando.silva@trustly.com,Cloud Security,done,sec ops,,INF-16308,story,18000,Medium,closed,[Cloud Security] Evaluate and define relevant Jira dashboards,16200,False
+81,fernando.silva@trustly.com,Cloud Security,done,sec ops,,INF-16307,story,43200,High,closed,[Cloud Security] Validate resolved Findings,7200,False
+81,kelvin.lopes@trustly.com,Cyber Defense,done,sec ops,,INF-16306,story,7200,Low,closed,[Cyber Defense] [Follow UP] Cososys Tickets,,False
+81,igor.ceron@trustly.com,Cloud Security,done,sec ops,,INF-16305,story,14400,High,closed,[FOLLOW-UP] Cloud & App Security findings,1800,False
+81,fernando.silva@trustly.com,Cloud Security,done,sec ops,,INF-16304,story,28800,Medium,closed,"[Cloud Security] Analyze Security Hub/Prowler findings and identify ""Quick Wins""",13200,False
+81,kelvin.lopes@trustly.com,Cyber Defense,done,sec ops,,INF-16303,story,57600,Medium,closed,[Cyber Defense] Explore features and possibilities with OpenCTI,,False
+81,kelvin.lopes@trustly.com,Cyber Defense,done,sec ops,,INF-16302,story,57600,Medium,closed,[Cyber Defense] Map user groups admins in Okta,,False
+81,kelvin.lopes@trustly.com,Cyber Defense,done,sec ops,,INF-16301,story,57600,Medium,closed,[Cyber Defense] Map admin users in Okta,,False
+81,kelvin.lopes@trustly.com,Cyber Defense,todo,sec ops,,INF-16300,story,57600,Medium,scheduled,[Cyber Defense] Map Service users in Okta,,False
+81,kelvin.lopes@trustly.com,Cyber Defense,done,sec ops,,INF-16299,story,7200,Medium,closed,[Cyber Defense][Sprint 81] - Google DLP - Log Review,,False
+81,alvaro.carvalho@trustly.com,Observability,done,sre,,INF-16296,story,7200,High,closed,Organize DataOps escalation,1200,False
+81,luca.regne@trustly.com,App Security,done,sec ops,,INF-16292,story,,Low,closed,[App Security] Check dependency-track configs,,False
+81,luiz.berger@trustly.com,Data Tools,doing,data ops,,INF-16288,story,57600,None,in progress,Initial Airflow on K8s Architecture Design,5400,False
+81,tadeu.hastenreiter@trustly.com,Data Tools,doing,data ops,,INF-16287,story,43200,High,in progress,Integration Data Quality failed alerts to Pagerduty,25200,False
+81,tadeu.hastenreiter@trustly.com,Data Batch,done,data ops,,INF-16286,story,28800,Medium,closed,Review Opensearch Refinement process to use DBT instead of EMR,28800,False
+81,luiz.berger@trustly.com,Data Tools,done,data ops,,INF-16285,story,28800,Medium,closed,Airflow Self-Healing - add step to recreate stack,39600,False
+81,luiz.berger@trustly.com,Data Tools,done,data ops,,INF-16284,story,21600,Medium,closed,Review Airflow CloudFormation and Terraform PagerDuty Alarms,21600,False
+81,luca.regne@trustly.com,App Security,done,sec ops,,INF-16282,story,14400,High,closed,[App Security][SPRINT-81] Log Review,,False
+81,gabriel.souza@trustly.com,App Security,done,sec ops,,INF-16279,story,57600,Medium,closed,[App Security] App Security Follow-Up ,9000,False
+81,filipe.monteiro@trustly.com,Data Tools,done,data ops,,INF-16278,story,28800,Medium,closed,Refactor our Redshift DEV environment,43200,False
+81,vinicius.pilan@trustly.com,Platform,doing,dev ops,,INF-16272,story,28800,Medium,on hold,[DevOps] Backstage - Troubleshooting Pod crashes when doc build fails,,False
+81,rayane.pereira@trustly.com,Platform,done,dev ops,,INF-16271,bug,28800,Medium,closed,CronJob to scale down ReplicaSets failing,57600,False
+81,tadeu.hastenreiter@trustly.com,Data Batch,done,data ops,,INF-16269,story,14400,Medium,closed,Bring a new table from SalesForce to our Datalake,14400,False
+81,tiago.guasti@trustly.com,Platform,done,dev ops,,INF-16266,story,28800,Critical,closed,Create an exclusive replica database to backfill transaction histogram,,False
+81,mario.costa@trustly.com,Platform,done,dev ops,,INF-16265,story,28800,Blocker,closed,[DevOps] Backstage - Rollout AWS resources for non-dev accounts,28800,False
+81,belmiro.neto@trustly.com,Platform,done,dev ops,,INF-16264,story,14400,Medium,closed,[DevOps] Backstage - ArgoCD Application SHS,43200,False
+81,mario.costa@trustly.com,Platform,done,dev ops,,INF-16262,story,14400,Medium,closed,[DevOps] Backstage - DOC - for users,14400,False
+81,vinicius.pilan@trustly.com,Platform,done,dev ops,,INF-16260,story,28800,Blocker,closed,[DevOps] Backstage - Add Backstage Labels to application K8S RS manifests,28800,False
+81,belmiro.neto@trustly.com,Platform,done,dev ops,,INF-16259,story,57600,Medium,closed,[DevOps] Backstage - Investigate missing  K8S components visualization,64800,False
+81,belmiro.neto@trustly.com,Platform,done,dev ops,,INF-16258,story,28800,Blocker,closed,[DevOps] Backstage - Move to internal helm implementation,14400,False
+81,vinicius.pilan@trustly.com,Platform,done,dev ops,,INF-16257,story,14400,High,closed,[DevOps] Backstage - Enable TechDocs dedicated render,14400,False
+81,belmiro.neto@trustly.com,Platform,done,dev ops,,INF-16256,story,14400,High,closed,[DevOps] Backstage - Enable Github dedicated account,7200,False
+81,vinicius.pilan@trustly.com,Platform,done,dev ops,,INF-16255,story,57600,High,closed,[DevOps] Backstage - Enable TechDocs dedicated builder,64800,False
+81,rayane.pereira@trustly.com,Integration,done,dev ops,,INF-16252,story,57600,Medium,closed,Fix K8s Change Replicas Cronjob,57600,False
+81,pedro.gonring@trustly.com,Integration,done,dev ops,,INF-16251,story,28800,Medium,closed,[Neo4j] Try to Mitigate Unavailability During Node Rotation,28800,False
+81,rafael.brunoro@trustly.com,Data Tools,done,data ops,,INF-16242,story,14400,Low,closed,Remove Slack Callback for DAG error alerting,14400,False
+81,tadeu.hastenreiter@trustly.com,Data Tools,done,data ops,,INF-16236,story,7200,Medium,closed,Share table `pwmb_merchant_endpoints` on Redshift clusters,7200,False
+81,tadeu.hastenreiter@trustly.com,Data Batch,done,data ops,,INF-16235,story,14400,Medium,closed,Add fields to table `nav.impressions`,14400,False
+81,luiz.berger@trustly.com,Data Tools,done,data ops,,INF-16231,story,28800,Medium,closed,Remove cosmos dependencies from Airflow,14400,False
+81,lucas.santos@trustly.com,Tools,doing,dev ops,,INF-16230,bug,144000,High,in progress,[Bamboo] Agents in mode offline,25200,False
+81,pedro.gonring@trustly.com,Integration,todo,dev ops,,INF-16229,story,86400,Medium,scheduled,Add Vacuum Analyze to Start/Stop RDS Script,,False
+81,alexandre.zon@trustly.com,Cloud Security,done,sec ops,,INF-16220,story,21600,High,closed,"[Cloud Security] Improve ""get_findings"" script to get more information.",14400,False
+81,tchesley.alves@trustly.com,Corporate,todo,dev ops,,INF-16218,story,,None,scheduled,Set up Kibana/OpenSearch Dashboard/Alert for IT Support,,False
+81,filipe.monteiro@trustly.com,Data Batch,done,data ops,,INF-16216,story,28800,Medium,closed,dbt - separate dag configuration from `dbt_project.yml`,5400,False
+81,filipe.monteiro@trustly.com,Data Batch,done,data ops,,INF-16215,story,28800,Medium,closed,Clean old DBT CI Schemas from Analytics QAS Cluster,18000,False
+81,rafael.brunoro@trustly.com,Data Tools,done,data ops,,INF-16207,story,7200,High,closed,[DataOps] VPC default security groups should not allow inbound or outbound traffic,7200,False
+81,carlos.neto@trustly.com,Tools,done,dev ops,,INF-16170,story,57600,Medium,closed,[logserver] configure log rotate from logserver to S3 in all environments,57600,False
+81,raphael.santos@trustly.com,Observability,done,sre,,INF-16168,story,57600,Critical,closed,[PagerDuty] Adjust AlertmanagerConfig on AlertManager to handle FI events,,False
+81,pedro.gonring@trustly.com,Integration,doing,dev ops,,INF-16161,story,115200,Critical,in progress,[PagerDuty] Add new orchestration to FIs,57600,False
+81,tiago.guasti@trustly.com,Platform,done,dev ops,,INF-16154,story,,High,closed,Evaluate the amount of proxy on EMEA-PRO,,False
+81,filipe.monteiro@trustly.com,Data Streaming,done,data ops,,INF-16142,story,57600,Medium,closed,Persist Redshift Internal Views for Query Monitoring,43200,False
+81,gabriel.souza@trustly.com,App Security,done,sec ops,,INF-16134,story,86400,Medium,closed,[App Security] Send logs SonarQube to OpenSearch,73800,False
+81,mario.costa@trustly.com,Platform,done,dev ops,,INF-16124,story,28800,Medium,closed,[DevOps] Backstage - VPA for Shared-Services Clusters,28800,False
+81,tchesley.alves@trustly.com,Integration,done,dev ops,,INF-16123,story,7200,High,closed,Test restore of pro-db backup - 2023 -  Dec,,False
+81,tchesley.alves@trustly.com,Platform,done,dev ops,,INF-16120,story,57600,Medium,closed,Rename frontend pod and service to frontend-panel,,False
+81,tchesley.alves@trustly.com,Platform,done,dev ops,,INF-16119,story,28800,Medium,closed,Rename token pod and service to token-engine-server,,False
+81,raphael.santos@trustly.com,Observability,done,sre,,INF-16118,story,86400,None,closed,Document onboarding process to Incident Response,,False
+81,raphael.santos@trustly.com,Observability,doing,sre,,INF-16117,story,144000,High,in progress,Understand and map Risk incidents,,False
+81,alvaro.carvalho@trustly.com,Observability,doing,sre,,INF-16112,story,115200,None,in progress,Understand and map DataOps incidents,,False
+81,rafael.brunoro@trustly.com,App Security,done,data ops,,INF-16111,story,28800,High,closed,[App Security] Fix Security Vulnerability reported by GitHub for ops-ninja and data-engineering repository,28800,False
+81,alexandre.zon@trustly.com,Cloud Security,done,sec ops,,INF-16109,story,28800,Critical,closed,[Cloud Security] Secrets in Lambda functions,10800,False
+81,tadeu.hastenreiter@trustly.com,Data Tools,done,data ops,,INF-16104,story,7200,High,closed,SC10604 - Redshift - ADD new table,10800,False
+81,pedro.gonring@trustly.com,Integration,done,dev ops,,INF-16101,story,7200,Low,closed,[DOC] Create Android SDK Build/Publish Confluence,7200,False
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-16095,story,57600,High,closed,INFO webhook when Frida crashes,27000,False
+81,rafael.brunoro@trustly.com,Data Tools,todo,data ops,,INF-16092,story,18000,High,scheduled,[DataOps] Analyze Customer Managed IAM policies allowing actions that may lead into Privilege Escalation,,False
+81,tchesley.alves@trustly.com,Platform,done,dev ops,,INF-16088,story,144000,High,closed,[DevOps] Analyze Customer Managed IAM policies allowing actions that may lead into Privilege Escalation,,False
+81,marcus.leite@trustly.com,Platform,doing,dev ops,,INF-16087,story,144000,Medium,in progress,New Module - Client Hello Collect,,False
+81,julio.santos@trustly.com,Tools,doing,dev ops,,INF-16086,story,57600,Medium,in progress,Change docker image of Atlantis running in SHS,79200,False
+81,alexandre.zon@trustly.com,Cloud Security,done,sec ops,,INF-16080,story,14400,Medium,closed,[Cloud Security] Set up AWS Resource Explorer for multi-account  resource search,5400,False
+81,carlos.neto@trustly.com,Tools,done,dev ops,,INF-16076,story,57600,Medium,closed,[logserver] detect log fileds with bad name (TRX and Engine) ,18000,False
+81,alvaro.carvalho@trustly.com,Observability,todo,sre,,INF-16045,bug,14400,Low,scheduled,Alertmanager has stopped generating incidents on PagerDuty,,False
+81,fernando.silva@trustly.com,Cloud Security,done,sec ops,,INF-16008,story,28800,Medium,closed,"[Cloud Security] Generate reports with the resources from ""denied regions""",10800,False
+81,igor.ceron@trustly.com,Cloud Security,doing,sec ops,,INF-16004,story,115200,Medium,on hold,[Cloud Security] Implement new GuardDuty feature: EKS Runtime Monitoring using IaC,42300,False
+81,igor.ceron@trustly.com,App Security,done,sec ops,,INF-15999,story,28800,Medium,closed,[App Security] Review NGINX structure for security purposes,28200,False
+81,alexandre.zon@trustly.com,Cloud Security,done,sec ops,,INF-15970,story,57600,Critical,closed,[Cloud Security] Planning for early 2024,39600,False
+81,gabriel.souza@trustly.com,App Security,done,sec ops,,INF-15957,story,28800,Medium,closed,[App Security] Define Vulnerability Management Policy,,False
+81,belmiro.neto@trustly.com,Platform,done,dev ops,,INF-15917,story,28800,High,closed,[DevOps] Backstage - Improve Okta setup,10800,False
+81,tiago.guasti@trustly.com,Observability,done,sre,,INF-15905,story,144000,Medium,closed,Create dashboards in New Relic for EKS Nodes and JVM ,,False
+81,luca.regne@trustly.com,App Security,done,sec ops,,INF-15847,story,57600,Medium,closed, [App Security] OWASP-ZAP pipeline to UAT ,,False
+81,filipe.monteiro@trustly.com,Data Tools,done,data ops,,INF-15846,story,21600,Low,closed,Enable riskops to use dbt,10800,False
+81,pedro.gonring@trustly.com,Integration,done,dev ops,,INF-15792,story,28800,Medium,closed,[NinjAPI] Update Libs,28800,False
+81,pedro.gonring@trustly.com,Integration,done,dev ops,,INF-15791,story,28800,Medium,closed,[NinjaCLI] Update Libs,28800,False
+81,marcus.leite@trustly.com,Platform,done,dev ops,,INF-15786,story,115200,Medium,closed,Simulators module deploy,115200,False
+81,mateus.muller@trustly.com,Platform,doing,dev ops,,INF-15778,story,86400,Medium,on hold,Scale Redroid on top of EC2,54000,False
+81,carlos.neto@trustly.com,Tools,doing,dev ops,,INF-15711,story,230400,High,on hold,[opencti] Deploy OpenCTI via Docker on AWS,118800,False
+81,julio.santos@trustly.com,Tools,done,dev ops,,INF-15591,story,28800,Medium,closed,[RETRO] [atlantis] Research about Atlantis delay,32400,False
+81,vinicius.pilan@trustly.com,Platform,doing,dev ops,,INF-15567,story,144000,Medium,in progress,Optimize DaemonSets from the cluster,82800,False
+81,lucas.santos@trustly.com,Tools,done,dev ops,,INF-15565,story,144000,Low,closed,Configure Automated Rollbacks in the Kubernetes Provider,86400,False
+81,rayane.pereira@trustly.com,Platform,done,dev ops,,INF-15482,story,57600,High,closed,Analyze old ECR images in use by EKS and plan next steps,86400,False
+81,rafael.brunoro@trustly.com,Data Tools,doing,data ops,,INF-15411,story,36000,Medium,on hold,Create CICD for custom docker images,900,False
+81,tadeu.hastenreiter@trustly.com,Data Batch,done,data ops,,INF-15400,story,36000,High,closed,Populate Persist FACTs Table with backfilled Velocity,93600,False
+81,rayane.pereira@trustly.com,Tools,done,dev ops,,INF-15361,story,18000,Medium,closed,[sftp] [keeper] refactor the SFTP users credentials sharing structure,18000,False
+81,alexandre.zon@trustly.com,Cloud Security,done,sec ops,,INF-15144,story,28800,High,closed,[Cloud Security] S3 Block Public Access setting should be enabled at the bucket-level,10800,False
+81,mario.costa@trustly.com,Platform,done,dev ops,,INF-15102,story,57600,High,closed,[Observability] Lint solution for Prometheus Rules ArgoCD application,28800,False
+81,rafael.ferreira@trustly.com,MLOps,todo,ml ops,,INF-15041,story,28800,Medium,scheduled,Create Risk Models Alarms Through Bamboo Pipeline,,False
+81,mateus.muller@trustly.com,Platform,done,dev ops,,INF-14896,story,57600,High,closed,Linkerd deployment on SHS/SHS-DEV using ArgoCD,,False
+81,belmiro.neto@trustly.com,Platform,done,dev ops,,INF-14836,bug,21600,Medium,closed,[NewRelic Agent] Upgrade new relic agent code to get the last version,25200,False
+81,rafael.brunoro@trustly.com,Data Tools,done,data ops,,INF-14621,story,86400,Blocker,closed,Redshift - Decrypt using EMR,327600,False
+81,rafael.ferreira@trustly.com,MLOps,doing,ml ops,,INF-14145,story,,High,on hold,EMR orchestration and Kubeflow pipeline,,False
+81,rafael.brunoro@trustly.com,Incident Response,doing,data ops,,INF-13615,story,21600,Critical,in progress,Create an Alert when FACTs are not being persisted,,False
+81,rafael.ferreira@trustly.com,Platform,doing,dev ops,,INF-13567,story,3600,High,to deploy,Remove database maintenance jobs,3600,False
+81,luiz.berger@trustly.com,Data Tools,done,data ops,,INF-13437,bug,10800,Low,closed,Airflow Webserver Logs not working in Prod,10800,False
+81,luiz.berger@trustly.com,Data Batch,done,data ops,,INF-13355,story,14400,Low,closed,Templated fields on operators that extend PythonVirtualOperator,13500,False
+81,belmiro.neto@trustly.com,Platform,doing,dev ops,,INF-13216,story,144000,Medium,to deploy,Update base image from PWMB,14400,False
+81,marcus.leite@trustly.com,Platform,doing,dev ops,,INF-12586,story,57600,Low,on hold,[CI/CD] FIC-Server - Create Spinnaker pipeline to deploy a FIC Server only using an image that isn't worker,36000,False
+81,julio.santos@trustly.com,Tools,doing,dev ops,,INF-10957,story,172800,Medium,in progress,Refactor SonarQube architecture,86400,False
+81,rayane.pereira@trustly.com,Observability,doing,dev ops,,INF-5961,story,57600,Medium,in progress,Observability - NewRelic - Check if our Kubernetes alarms contemplate all cluster components,,False

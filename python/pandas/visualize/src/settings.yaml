@@ -1,0 +1,21 @@
+reports_directory: ../database/
+
+
+issues_status_mapping:
+  status_not_started:
+    - reopened
+    - scheduled
+    - new
+    - backlog
+    - assigned
+    - triggered
+  status_started:
+    - in progress
+    - acknowledge
+    - canceled
+    - to deploy
+    - on hold
+    - deploy in progress
+  status_done:
+    - closed
+    - resolved
