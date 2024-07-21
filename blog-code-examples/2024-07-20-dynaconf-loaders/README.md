@@ -1,10 +1,11 @@
 # Dynaconf Loaders
 
+> _lab created for blog post: https://carlosneto.dev/blog/2024/2024-06-08-logstash-sniffing/_
+
 Lab to exemplify how to use Dynaconf with multiple parameter sources, including custom loaders to retrieve parameters from AWS Parameter Store.
 
 The AWS Parameter Store is simulated by a _Localstack_ container created with docker-compose, and its parameters are created by [_put_parameters_aws.py](./_put_parameters_aws.py). The Dynaconf instance is in [./src/config.py](./src/config.py), which retrieves parameters from [./config/*.yaml](./config/) files and AWS Parameter Store.
 
-> _this lab was created for blog post: https://carlosneto.dev/blog/2024/2024-06-08-logstash-sniffing/_
 
 ---
 
