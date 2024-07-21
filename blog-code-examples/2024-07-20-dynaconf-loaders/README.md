@@ -6,7 +6,6 @@ Lab to exemplify how to use Dynaconf with multiple parameter sources, including 
 
 The AWS Parameter Store is simulated by a _Localstack_ container created with docker-compose, and its parameters are created by [_put_parameters_aws.py](./_put_parameters_aws.py). The Dynaconf instance is in [./src/config.py](./src/config.py), which retrieves parameters from [./config/*.yaml](./config/) files and AWS Parameter Store.
 
-
 ---
 
 __Directory Files Overview:__
