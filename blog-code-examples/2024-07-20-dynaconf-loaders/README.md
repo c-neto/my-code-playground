@@ -1,6 +1,6 @@
 # Dynaconf Loaders
 
-> _lab created for blog post: [https://carlosneto.dev/blog/2024/2024-06-08-logstash-sniffing/](https://carlosneto.dev/blog/2024/2024-07-20-dynaconf/)_
+> _lab created for blog post: https://carlosneto.dev/blog/2024/2024-07-20-dynaconf/_
 
 Lab to exemplify how to use Dynaconf with multiple parameter sources, including custom loaders to retrieve parameters from AWS Parameter Store.
 
