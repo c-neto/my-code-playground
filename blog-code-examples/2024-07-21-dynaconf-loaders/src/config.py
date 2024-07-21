@@ -56,7 +56,7 @@ else:
 
 # Initialize Dynaconf settings with specified files and loaders
 settings = Dynaconf(
-    settings_files=["settings.toml", ".secrets.toml"],
+    settings_files=["settings.yaml", ".secrets.yaml"],
     envvar_prefix="MY_APP",
     LOADERS_FOR_DYNACONF=LOADERS_FOR_DYNACONF,
 )
