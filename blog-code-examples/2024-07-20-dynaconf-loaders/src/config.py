@@ -35,7 +35,8 @@ def __aws_parameter_store_loader(parameters_prefix="/my-application/") -> dict:
     return parameter_from_aws
 
 
-# callback used by parameter dynaconf to retrieve values from AWS Parameter Store
+# callback used by dynaconf to get parameters for any custom source. 
+# in this case, it's retrivied parameter from AWS Parameter Store
 def load(obj: LazySettings, env: str, silent: bool = True, key: str = None, filename: str = None) -> None:
     parameter_from_aws = __aws_parameter_store_loader()
     logger.debug(f"parameters loaded from AWS Parameter Store: {list(parameter_from_aws)}")
