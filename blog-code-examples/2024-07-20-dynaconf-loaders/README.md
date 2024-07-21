@@ -11,38 +11,38 @@ The AWS Parameter Store is simulated by a _Localstack_ container created with do
 __Directory Files Overview:__
 
 ```bash
-├── Makefile                # shortcuts to create virtualenv, install dependencies and up  
-├── docker-compose.yaml     # recipe to run aws/Localstack container with AWS Parameter Store service enabled
+├── Makefile                # shortcuts to create virtualenv, install dependencies, and start the application
+├── docker-compose.yaml     # recipe to run AWS/Localstack container with AWS Parameter Store service enabled
 ├── _put_parameters_aws.py  # script to create some example parameters in AWS Parameter Store
-├── config                  # special directory dedicated to settings files for dynaconf
-│   ├── .secrets.yaml       # settings file dedicated to sensitive data
-│   └── settings.yaml       # settings files dedicated to general application parameters
+├── config                  # special directory dedicated to settings files for Dynaconf
+│   ├── .secrets.yaml       # settings file dedicated to sensitive data
+│   └── settings.yaml       # settings file dedicated to general application parameters
 └── src                     # application source code
-    ├── app.py              # application moduel example that import dynaconf instance from config.py
-    └── config.py           # module dedicated to dynaconf instance (with custom loader access AWS Parameter Store)
+    ├── app.py              # application module example that imports Dynaconf instance from config.py
+    └── config.py           # module dedicated to Dynaconf instance (with custom loader to access AWS Parameter Store)
 ```
 
 ## Step-by-step
 
-1. Load AWS/Localstack environment variables (used by dynaconf-cli and [./src/config.py](./src/config.py)):
+1. Load AWS/Localstack environment variables (used by Dynaconf CLI and [./src/config.py](./src/config.py)):
 
 ```bash
 export $(cat .env)
 ```
 
-2. Create virtualenv and install dependencies:
+2. Create a virtual environment and install dependencies:
 
 ```bash
 make setup
 ```
 
-3. Create Localstack container to simulate AWS Parameter Store service:
+3. Create a Localstack container to simulate the AWS Parameter Store service:
 
 ```bash
 docker-compose up -d
 ```
 
-4. Activate the virtualenv:
+4. Activate the virtual environment:
 
 ```bash
 source ./venv/bin/activate
@@ -54,13 +54,13 @@ source ./venv/bin/activate
 python3 _put_parameters_aws.py
 ```
 
-6. List all parameters retrieved via dynaconf CLI: 
+6. List all parameters retrieved via Dynaconf CLI:
 
 ```bash
 dynaconf -i src.config.settings list
 ```
 
-7. Run an example Application:
+7. Run an example application:
 
 ```bash
 python3 src/app.py
