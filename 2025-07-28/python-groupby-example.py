@@ -69,7 +69,7 @@ attribute_group = lambda item: (item.category, item.genre, item.country)
 for (category, genre, country), group in groupby(bands, key=attribute_group):
     print(f">>> {category=}, {genre=}, {country=}")
     for band in group:
-        print(f"  - {band.name}")
+        print(f"- {band.name}")
 
 print("\n\nGROUPING BANDS BY (GENRE, COUNTRY, CATEGORY) USING itertools.groupby AND attrgetter:")
 
@@ -79,4 +79,4 @@ attribute_group = attrgetter("category", "genre", "country",)
 for (category, genre, country), group in groupby(bands, key=attribute_group):
     print(f">>> {category=}, {genre=}, {country=}")
     for band in group:
-        print(f"  - {band.name}")
+        print(f"- {band.name}")
