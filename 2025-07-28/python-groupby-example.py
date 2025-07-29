@@ -50,28 +50,33 @@ bands = [
 # Group bands using a dictionary with (genre, country, category) as key
 bands_groupby_genre_country = {}
 
+print("GROUPING BANDS BY (GENRE, COUNTRY, CATEGORY) USING A DICTIONARY:")
+
 for band in bands:
     group_key = (band.genre, band.country, band.category)
     bands_groupby_genre_country.setdefault(group_key, []).append(band)
 
 for (category, genre, country), band_group in bands_groupby_genre_country.items():
-    print(f">>> {category=}, {genre=}, {country=}:")
+    print(f"\n\n>>> {category=}, {genre=}, {country=}")
     for band in band_group:
         print(f"- {band.name}")
+
+print("\n\nGROUPING BANDS BY (GENRE, COUNTRY, CATEGORY) USING itertools.groupby:")
 
 # Group bands using itertools.groupby and a lambda function as key
 attribute_group = lambda item: (item.category, item.genre, item.country)
 
 for (category, genre, country), group in groupby(bands, key=attribute_group):
-    print(f">>> {category=}, {genre=}, {country=}:")
+    print(f"\n\n>>> {category=}, {genre=}, {country=}")
     for band in group:
         print(f"  - {band.name}")
+
+print("\n\nGROUPING BANDS BY (GENRE, COUNTRY, CATEGORY) USING itertools.groupby AND attrgetter:")
 
 # Group bands using itertools.groupby and attrgetter as key
 attribute_group = attrgetter("category", "genre", "country",)
 
 for (category, genre, country), group in groupby(bands, key=attribute_group):
-    print(f">>> {category=}, {genre=}, {country=}:")
+    print(f"\n\n>>> {category=}, {genre=}, {country=}")
     for band in group:
         print(f"  - {band.name}")
-
